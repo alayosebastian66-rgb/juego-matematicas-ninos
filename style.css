@@ -1,0 +1,141 @@
+* {
+  box-sizing: border-box;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+body {
+  margin: 0;
+  font-family: 'Comic Sans MS', 'Chalkboard SE', sans-serif;
+  background: linear-gradient(180deg, #87CEEB 0%, #E0F7FA 70%, #81C784 70%, #66BB6A 100%);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  overflow: hidden;
+  padding: 20px;
+}
+
+#header {
+  background: white;
+  padding: 15px 30px;
+  border-radius: 30px;
+  box-shadow: 0 8px 0 #CFD8DC;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-size: 1.8rem;
+  color: #37474F;
+  text-align: center;
+}
+
+#btn-hablar {
+  background: #FFCA28;
+  border: none;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  font-size: 1.8rem;
+  cursor: pointer;
+  box-shadow: 0 5px 0 #FFA000;
+  transition: transform 0.1s;
+}
+
+#btn-hablar:active {
+  transform: translateY(4px);
+  box-shadow: 0 1px 0 #FFA000;
+}
+
+#monstruo-zona {
+  width: 240px;
+  height: 240px;
+  background: #AB47BC;
+  border-radius: 50% 50% 45% 45%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 12px 0 #7B1FA2;
+  position: relative;
+  transition: transform 0.2s, background 0.3s;
+}
+
+#monstruo-zona.abierto {
+  transform: scale(1.12);
+  background: #BA68C8;
+}
+
+#monstruo-zona.feliz {
+  animation: saltar 0.5s infinite alternate;
+  background: #EC407A;
+}
+
+.ojos {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 15px;
+}
+
+.ojo {
+  width: 45px;
+  height: 45px;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pupila {
+  width: 20px;
+  height: 20px;
+  background: #212121;
+  border-radius: 50%;
+}
+
+#boca {
+  width: 110px;
+  height: 65px;
+  background: #4A148C;
+  border-radius: 15px 15px 55px 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+  border: 4px solid #F48FB1;
+}
+
+#canasta {
+  background: #8D6E63;
+  border: 6px solid #5D4037;
+  border-radius: 25px;
+  padding: 20px;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  min-height: 130px;
+  width: 90%;
+  max-width: 700px;
+  box-shadow: 0 10px 0 #4E342E;
+}
+
+.fruta {
+  font-size: 4rem;
+  cursor: grab;
+  transition: transform 0.15s;
+  touch-action: none;
+}
+
+.fruta:active {
+  transform: scale(1.2);
+  cursor: grabbing;
+}
+
+@keyframes saltar {
+  from { transform: translateY(0); }
+  to { transform: translateY(-20px); }
+}
